@@ -16,6 +16,13 @@
 
   --font-main: 'Poppins', sans-serif;
 
+  /* Échelle typographique */
+  --fs-h1: 3.2rem;
+  --fs-h2: 2.2rem;
+  --fs-h3: 1.2rem;
+  --fs-base: 1rem;
+  --fs-small: 0.875rem;
+
   --container-width: 1200px;
   --header-height: 80px;
 
@@ -40,6 +47,7 @@ html {
 
 body {
   font-family: var(--font-main);
+  font-size: var(--fs-base);
   color: var(--color-text);
   line-height: 1.6;
   background-color: var(--color-bg);
@@ -63,6 +71,15 @@ img {
 h1, h2, h3 {
   font-weight: 700;
   color: var(--color-dark);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+small {
+  font-size: var(--fs-small);
+  color: var(--color-text-light);
 }
 
 .section-title {
@@ -99,6 +116,7 @@ h1 span {
 .btn-primary:hover {
   background-color: var(--color-primary-dark);
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
 }
 
 .btn-outline {
@@ -110,6 +128,7 @@ h1 span {
 .btn-outline:hover {
   background-color: var(--color-dark);
   color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ==========================================================================
@@ -203,6 +222,7 @@ h1 span {
   border-radius: 2px;
   transition: var(--transition);
 }
+
 /* Animation hamburger -> croix quand actif */
 .hamburger.active .bar:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
@@ -235,7 +255,6 @@ h1 span {
 }
 
 .hero-content h1 {
-  font-size: 3.2rem;
   line-height: 1.2;
   margin-bottom: 1.2rem;
 }
@@ -323,7 +342,6 @@ h1 span {
 
 .pourquoi-item h3 {
   margin-bottom: 0.8rem;
-  font-size: 1.2rem;
 }
 
 .pourquoi-item p {
@@ -359,6 +377,7 @@ h1 span {
 
 .intervenant-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .intervenant-card img {
@@ -422,7 +441,6 @@ h1 span {
 
 .inscription h2 {
   color: #fff;
-  font-size: 2.2rem;
   margin-bottom: 1rem;
 }
 
@@ -657,6 +675,7 @@ h1 span {
   font-size: 2.4rem;
   margin-bottom: 0.8rem;
 }
+
 .page-header p {
   color: var(--color-text-light);
 }
@@ -725,6 +744,11 @@ h1 span {
   background-color: var(--color-bg-alt);
   margin-bottom: 1rem;
   align-items: flex-start;
+  transition: var(--transition);
+}
+
+.programme-item:hover {
+  box-shadow: var(--shadow);
 }
 
 .programme-heure {
@@ -807,11 +831,12 @@ h1 span {
   overflow: hidden;
   text-align: center;
   box-shadow: var(--shadow);
-   transition: var(--transition);
+  transition: var(--transition);
 }
 
 .intervenant-full-card:hover {
   transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .intervenant-full-img {
@@ -952,6 +977,11 @@ h1 span {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-primary);
+  transition: var(--transition);
+}
+
+.social-links a:hover {
+  color: var(--color-primary-dark);
 }
 
 .map-section iframe {
@@ -982,6 +1012,7 @@ h1 span {
   color: #fff;
   margin-bottom: 0.8rem;
 }
+
 .footer-brand span {
   color: var(--color-primary);
 }
@@ -1033,6 +1064,11 @@ h1 span {
    ========================================================================== */
 
 @media (max-width: 992px) {
+  :root {
+    --fs-h1: 2.4rem;
+    --fs-h2: 1.9rem;
+  }
+
   .chiffres-grid,
   .intervenants-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1057,6 +1093,12 @@ h1 span {
 }
 
 @media (max-width: 768px) {
+  :root {
+    --fs-h1: 2rem;
+    --fs-h2: 1.6rem;
+    --fs-h3: 1.1rem;
+  }
+
   .nav-menu {
     position: fixed;
     top: var(--header-height);
@@ -1084,10 +1126,6 @@ h1 span {
 
   .hamburger {
     display: flex;
-  }
-
-  .hero-content h1 {
-    font-size: 2.3rem;
   }
 
   .chiffres-grid {
@@ -1120,12 +1158,13 @@ h1 span {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --fs-h1: 1.7rem;
+    --fs-base: 0.95rem;
+  }
+
   .chiffres-grid,
   .sponsors-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-content h1 {
-    font-size: 1.9rem;
   }
 }
