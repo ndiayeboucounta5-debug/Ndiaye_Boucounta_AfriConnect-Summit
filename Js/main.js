@@ -475,5 +475,260 @@ numberObserver.observe(number);
 
 
 
+/* =====================================================
+   COMMIT 6 - PROGRAMME + INTERVENANTS + CONTACT
+   AfriConnect Summit
+===================================================== */
 
+
+/* =====================================================
+   ONGLET PROGRAMME (JOUR 1 / JOUR 2 / JOUR 3)
+===================================================== */
+
+const tabButtons = document.querySelectorAll(".tab-btn");
+const programmeJours = document.querySelectorAll(".programme-jour");
+
+
+if(tabButtons.length > 0){
+
+    tabButtons.forEach(button => {
+
+        button.addEventListener("click",()=>{
+
+            // retirer active
+            tabButtons.forEach(btn=>{
+                btn.classList.remove("active");
+            });
+
+
+            programmeJours.forEach(jour=>{
+                jour.classList.remove("active");
+            });
+
+
+            // ajouter active bouton
+            button.classList.add("active");
+
+
+            // afficher le jour choisi
+            const jourId = button.dataset.jour;
+
+            const jourAfficher = document.getElementById(jourId);
+
+            if(jourAfficher){
+                jourAfficher.classList.add("active");
+            }
+
+        });
+
+    });
+
+}
+
+
+
+/* =====================================================
+   FILTRAGE INTERVENANTS PAR PAYS
+===================================================== */
+
+const filtreButtons = document.querySelectorAll(".filtre-btn");
+const intervenants = document.querySelectorAll(".intervenant-full-card");
+
+
+if(filtreButtons.length > 0){
+
+    filtreButtons.forEach(button=>{
+
+
+        button.addEventListener("click",()=>{
+
+
+            // bouton actif
+
+            filtreButtons.forEach(btn=>{
+                btn.classList.remove("active");
+            });
+
+
+            button.classList.add("active");
+
+
+            const pays = button.dataset.pays;
+
+
+
+            intervenants.forEach(card=>{
+
+
+                const cardPays = card.dataset.pays;
+
+
+                if(pays === "tous" || pays === cardPays){
+
+                    card.style.display="block";
+
+
+                    setTimeout(()=>{
+                        card.style.opacity="1";
+                        card.style.transform="translateY(0)";
+                    },50);
+
+
+                }
+
+                else{
+
+                    card.style.opacity="0";
+                    card.style.transform="translateY(20px)";
+
+
+                    setTimeout(()=>{
+
+                        card.style.display="none";
+
+                    },300);
+
+                }
+
+
+            });
+
+
+
+        });
+
+
+    });
+
+
+}
+
+
+
+
+
+/* =====================================================
+   VALIDATION FORMULAIRE CONTACT
+===================================================== */
+
+
+const contactForm = document.getElementById("contact-form");
+
+
+if(contactForm){
+
+
+contactForm.addEventListener("submit",(e)=>{
+
+
+    e.preventDefault();
+
+
+
+    const nom = document.getElementById("nom").value.trim();
+
+    const email = document.getElementById("email").value.trim();
+
+    const telephone = document.getElementById("telephone").value.trim();
+
+    const sujet = document.getElementById("sujet").value;
+
+    const message = document.getElementById("message").value.trim();
+
+    const consentement = document.getElementById("consentement").checked;
+
+
+
+    // Regex email
+
+    const emailRegex =
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+
+    let erreurs = [];
+
+
+
+    if(nom === ""){
+
+        erreurs.push("Le nom est obligatoire");
+
+    }
+
+
+
+    if(!emailRegex.test(email)){
+
+        erreurs.push("Adresse email invalide");
+
+    }
+
+
+
+    if(telephone !== "" && telephone.length < 8){
+
+        erreurs.push("Téléphone invalide");
+
+    }
+
+
+
+    if(sujet === ""){
+
+        erreurs.push("Veuillez choisir un sujet");
+
+    }
+
+
+
+    if(message === ""){
+
+        erreurs.push("Le message est obligatoire");
+
+    }
+
+
+
+    if(!consentement){
+
+        erreurs.push("Vous devez accepter les conditions");
+
+    }
+
+
+
+
+
+    if(erreurs.length > 0){
+
+
+        alert(
+            "Veuillez corriger :\n\n" 
+            + erreurs.join("\n")
+        );
+
+
+    }
+
+
+    else{
+
+
+        alert(
+            "✅ Votre message a été envoyé avec succès !"
+        );
+
+
+        contactForm.reset();
+
+
+    }
+
+
+
+});
+
+
+}
 
