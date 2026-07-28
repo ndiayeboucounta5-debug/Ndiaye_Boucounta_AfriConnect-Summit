@@ -1168,3 +1168,699 @@ h1 span {
     grid-template-columns: 1fr;
   }
 }
+
+/* =====================================================
+   ACCUEIL - SECTIONS SUPPLEMENTAIRES
+   AFRICONNECT SUMMIT
+===================================================== */
+
+
+/* ================= COUNTDOWN ================= */
+
+
+.countdown-container{
+
+    margin-top:3rem;
+
+}
+
+
+.countdown-container h2{
+
+    color:white;
+
+    font-size:1.3rem;
+
+    margin-bottom:1.5rem;
+
+}
+
+
+
+.countdown{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:1rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.count-box{
+
+    width:110px;
+
+    height:100px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.count-box span{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:var(--color-primary);
+
+}
+
+
+
+.count-box small{
+
+    color:var(--color-text-light);
+
+}
+
+
+
+
+
+
+
+/* ================= POURQUOI PARTICIPER ================= */
+
+
+
+.pourquoi{
+
+    padding:5rem 1.5rem;
+
+}
+
+
+
+.pourquoi-grid{
+
+    max-width:var(--container-width);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:2rem;
+
+}
+
+
+
+.pourquoi-item{
+
+    background:var(--color-bg-alt);
+
+    padding:2rem;
+
+    border-radius:var(--radius);
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+
+
+.pourquoi-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.pourquoi-icon{
+
+    font-size:2.5rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.pourquoi-item h3{
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.pourquoi-item p{
+
+    color:var(--color-text-light);
+
+}
+
+
+
+
+
+
+
+/* ================= BENTO INTERVENANTS ================= */
+
+
+.intervenants{
+
+    padding:5rem 1.5rem;
+
+    background:var(--color-bg-alt);
+
+}
+
+
+
+.intervenants-bento{
+
+    max-width:var(--container-width);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    grid-auto-rows:250px;
+
+    gap:1.5rem;
+
+}
+
+
+
+.speaker-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.speaker-card img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+
+
+.speaker-card:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+
+.speaker-info{
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    width:100%;
+
+    padding:1.2rem;
+
+    color:white;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.8)
+    );
+
+}
+
+
+
+.speaker-info h3{
+
+    color:white;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.speaker-info p,
+
+.speaker-info span{
+
+    color:white;
+
+    font-size:.9rem;
+
+}
+
+
+
+.speaker-large{
+
+    grid-column:span 2;
+
+    grid-row:span 2;
+
+}
+
+
+
+.center-btn{
+
+    text-align:center;
+
+    margin-top:3rem;
+
+}
+
+
+
+
+
+
+
+/* ================= SPONSORS ================= */
+
+
+
+.sponsors{
+
+    padding:5rem 1.5rem;
+
+}
+
+
+
+.sponsor-category{
+
+    max-width:var(--container-width);
+
+    margin:0 auto 3rem;
+
+    text-align:center;
+
+}
+
+
+
+.sponsor-category h3{
+
+    font-size:1.5rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.gold-title{
+
+    color:#D4AF37;
+
+}
+
+
+
+.silver-title{
+
+    color:#808080;
+
+}
+
+
+
+.bronze-title{
+
+    color:#CD7F32;
+
+}
+
+
+
+.sponsors-grid{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:2rem;
+
+    flex-wrap:wrap;
+
+}
+
+
+
+.sponsor-card{
+
+    width:220px;
+
+    height:120px;
+
+    background:white;
+
+    border-radius:var(--radius);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:1rem;
+
+    box-shadow:var(--shadow);
+
+}
+
+
+
+.sponsor-card img{
+
+    max-width:80%;
+
+    max-height:70px;
+
+    object-fit:contain;
+
+}
+
+
+
+.sponsor-card.gold{
+
+    border:3px solid #D4AF37;
+
+}
+
+
+
+.sponsor-card.silver{
+
+    border:3px solid #AFAFAF;
+
+}
+
+
+
+.sponsor-card.bronze{
+
+    border:3px solid #CD7F32;
+
+}
+
+
+
+
+
+
+
+/* ================= INSCRIPTION ================= */
+
+
+
+.inscription{
+
+    padding:5rem 1.5rem;
+
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        var(--color-primary),
+        var(--color-gold)
+    );
+
+    color:white;
+
+}
+
+
+
+.inscription h2{
+
+    color:white;
+
+    font-size:2.2rem;
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.inscription p{
+
+    margin-bottom:2rem;
+
+}
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+
+.footer{
+
+    background:var(--color-dark);
+
+    color:white;
+
+    padding:4rem 1.5rem 1rem;
+
+}
+
+
+
+.footer-content{
+
+    max-width:var(--container-width);
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr 1fr 1fr;
+
+    gap:2rem;
+
+}
+
+
+
+.footer h3,
+
+.footer h4{
+
+    color:white;
+
+}
+
+
+
+.footer span{
+
+    color:var(--color-primary);
+
+}
+
+
+
+.footer-links a,
+
+.footer-social a{
+
+    color:#ccc;
+
+    display:block;
+
+    margin-bottom:.5rem;
+
+}
+
+
+
+.footer-contact p{
+
+    color:#ccc;
+
+}
+
+
+
+.footer-bottom{
+
+    text-align:center;
+
+    margin-top:2rem;
+
+    padding-top:1rem;
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+
+
+
+
+/* ================= RESPONSIVE ================= */
+
+
+
+@media(max-width:992px){
+
+
+.pourquoi-grid{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.intervenants-bento{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+.footer-content{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+.pourquoi-grid{
+
+    grid-template-columns:1fr;
+
+}
+
+
+
+.intervenants-bento{
+
+    grid-template-columns:1fr;
+
+    grid-auto-rows:300px;
+
+}
+
+
+
+.speaker-large{
+
+    grid-column:auto;
+
+    grid-row:auto;
+
+}
+
+
+
+.footer-content{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+
+
+.count-box{
+
+    width:90px;
+
+    height:90px;
+
+}
+
+
+
+}
+
+
+
+@media(max-width:480px){
+
+
+.countdown{
+
+    gap:.5rem;
+
+}
+
+
+
+.count-box{
+
+    width:75px;
+
+}
+
+
+
+.count-box span{
+
+    font-size:1.5rem;
+
+}
+
+
+}
